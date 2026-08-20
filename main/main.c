@@ -50,13 +50,13 @@ void app_main(void)
     LCD_Init();
     Audio_Init();
     CST816_Init();
+    /* Start local ESP-SR speech recognition (no cloud service or API key). */
+    MIC_Speech_init();
     // Play_Music("/sdcard","AAA.mp3");
     LVGL_Init();   // returns the screen object
 
 // /********************* Provisioning + translator demo *********************/
     Translator_UI_Create();
-    /* ESP-SR stays available as a module, but is started later after its
-       memory profile is reduced; starting it here starves the LCD DMA path. */
     // lv_demo_widgets();
     // lv_demo_keypad_encoder();
     // lv_demo_benchmark();

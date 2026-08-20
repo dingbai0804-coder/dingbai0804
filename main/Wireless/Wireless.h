@@ -37,3 +37,4 @@ const char *WIFI_GetSSID(void);
 int8_t WIFI_GetRSSI(void);
 void BLE_Init(void *arg);
 uint16_t BLE_Scan(void);
+esp_err_t BLE_SendText(const char *text);
